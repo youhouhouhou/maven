@@ -135,8 +135,8 @@ public class CLIManager
         options.addOption( Option.builder( ALSO_MAKE_DEPENDENTS ).longOpt( "also-make-dependents" ).desc( "If project list is specified, also build projects that depend on projects on the list" ).build() );
         options.addOption( Option.builder( LOG_FILE ).longOpt( "log-file" ).hasArg().desc( "Log file where all build output will go" ).build() );
         options.addOption( Option.builder( SHOW_VERSION ).longOpt( "show-version" ).desc( "Display version information WITHOUT stopping build" ).build() );
-        options.addOption( Option.builder( ENCRYPT_MASTER_PASSWORD ).longOpt( "encrypt-master-password" ).optionalArg( true ).desc( "Encrypt master security password" ).build() );
-        options.addOption( Option.builder( ENCRYPT_PASSWORD ).longOpt( "encrypt-password" ).optionalArg( true ).desc( "Encrypt server password" ).build() );
+        options.addOption( Option.builder( ENCRYPT_MASTER_PASSWORD ).longOpt( "encrypt-master-password" ).numberOfArgs( 1 ).argName( "password" ).optionalArg( true ).desc( "Encrypt master security password" ).build() );
+        options.addOption( Option.builder( ENCRYPT_PASSWORD ).longOpt( "encrypt-password" ).numberOfArgs( 1 ).argName( "password" ).optionalArg( true ).desc( "Encrypt server password" ).build() );
         options.addOption( Option.builder( THREADS ).longOpt( "threads" ).hasArg().desc( "Thread count, for instance 2.0C where C is core multiplied" ).build() );
         options.addOption( Option.builder( LEGACY_LOCAL_REPOSITORY ).longOpt( "legacy-local-repository" ).desc( "Use Maven 2 Legacy Local Repository behaviour, ie no use of _remote.repositories. Can also be activated by using -Dmaven.legacyLocalRepo=true" ).build() );
         options.addOption( Option.builder( BUILDER ).longOpt( "builder" ).hasArg().desc( "The id of the build strategy to use" ).build() );
