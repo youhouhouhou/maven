@@ -1671,15 +1671,7 @@ public class MavenCli
         {
             if ( CLIManager.SET_SYSTEM_PROPERTY.equals( opt.getOpt() ) )
             {
-                String[] values = opt.getValues();
-                if ( values.length == 1 )
-                {
-                    setCliProperty( values[0], userProperties );
-                }
-                else
-                {
-                    setCliProperty( values[0] + "=" + values[1], userProperties );
-                }
+                setCliProperty( opt.getValue(), userProperties );
             }
         }
 
